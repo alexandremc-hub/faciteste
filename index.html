@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividades Complementares UTFPR</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #005c8a;
+        --secondary: #4fb0c6;
+        --accent: #ff6b00;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --success: #28a745;
+        --danger: #dc3545;
+        --warning: #ffc107;
+        --gray: #6c757d;
+        --border-radius: 8px;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7f9;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header e Navegação */
+      header {
+        background-color: var(--primary);
+        color: white;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: var(--box-shadow);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      .logo h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      nav a:hover {
+        color: var(--secondary);
+      }
+
+      .auth-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: var(--transition);
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+      }
+
+      .btn-primary {
+        background-color: var(--accent);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: #e55f00;
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+      }
+
+      .btn-outline:hover {
+        background-color: white;
+        color: var(--primary);
+      }
+
+      .btn-success {
+        background-color: var(--success);
+        color: white;
+      }
+
+      .btn-success:hover {
+        background-color: #218838;
+      }
+
+      /* Landing Page */
+      .hero {
+        padding: 4rem 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        color: white;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+      }
+
+      .cta-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .features {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--primary);
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .stats {
+        background-color: var(--primary);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .stat-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Forms */
+      .form-container {
+        max-width: 500px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+      }
+
+      .form-title {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+        font-size: 1rem;
+      }
+
+      /* Dashboard */
+      .dashboard {
+        padding: 2rem 0;
+      }
+
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .welcome {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      .stats-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .stat-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        text-align: center;
+      }
+
+      .stat-card h3 {
+        color: var(--gray);
+        margin-bottom: 1rem;
+      }
+
+      .progress-bar {
+        height: 10px;
+        background-color: #e9ecef;
+        border-radius: 5px;
+        margin: 1rem 0;
+        overflow: hidden;
+      }
+
+      .progress {
+        height: 100%;
+        background-color: var(--success);
+        border-radius: 5px;
+      }
+
+      /* Tables and Lists */
+      .activities-list,
+      .events-list {
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      .list-header {
+        padding: 1rem;
+        background-color: var(--primary);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .list-item {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .list-item:last-child {
+        border-bottom: none;
+      }
+
+      .badge {
+        padding: 0.25rem 0.5rem;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .badge-success {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      .badge-warning {
+        background-color: #fff3cd;
+        color: #856404;
+      }
+
+      .badge-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+
+      /* Toast Messages */
+      .toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .toast {
+        background: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: slideIn 0.3s ease;
+      }
+
+      .toast.success {
+        border-left: 4px solid var(--success);
+      }
+
+      .toast.error {
+        border-left: 4px solid var(--danger);
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 3rem 0 1rem;
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        color: var(--secondary);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Responsividade */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+          display: none;
+        }
+
+        nav ul.show {
+          display: flex;
+        }
+
+        .mobile-menu-btn {
+          display: block;
+          position: absolute;
+          right: 15px;
+          top: 15px;
+        }
+
+        .cta-container {
+          flex-direction: column;
+        }
+
+        .dashboard-header {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header com Navegação -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <h1>Atividades Complementares UTFPR</h1>
+          </div>
+          <nav>
+            <button class="mobile-menu-btn">
+              <i class="fas fa-bars"></i>
+            </button>
+            <ul id="nav-menu">
+              <li><a href="#landing">Início</a></li>
+              <li><a href="#eventos">Eventos</a></li>
+              <li><a href="#professores">Professores</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+            </ul>
+          </nav>
+          <div class="auth-buttons">
+            <button class="btn btn-outline" id="login-btn">Entrar</button>
+            <button class="btn btn-primary" id="signup-btn">Cadastrar</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Landing Page -->
+    <section id="landing" class="hero">
+      <div class="container">
+        <h2>Simplifique o gerenciamento de atividades complementares</h2>
+        <p>
+          Registre, acompanhe e valide todas as suas atividades complementares
+          de forma organizada e eficiente, seguindo as diretrizes da UTFPR.
+        </p>
+        <div class="cta-container">
+          <button class="btn btn-primary btn-large">Sou Aluno</button>
+          <button class="btn btn-outline btn-large">Sou Professor</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Como Funciona</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+            <h3>Registro Simplificado</h3>
+            <p>
+              Cadastre suas atividades de forma organizada, incluindo descrição,
+              carga horária, comprovantes e datas.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h3>Acompanhamento</h3>
+            <p>
+              Acompanhe seu progresso em tempo real e verifique o cumprimento
+              das horas necessárias.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Validação</h3>
+            <p>
+              Envie seus comprovantes para validação pelos professores de forma
+              rápida e organizada.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <h2>Nossa Plataforma em Números</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">1,250</div>
+            <div class="stat-label">Alunos Ativos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">86</div>
+            <div class="stat-label">Professores</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">324</div>
+            <div class="stat-label">Eventos Realizados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">8,540</div>
+            <div class="stat-label">Horas Validadas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulários de Login e Cadastro -->
+    <section id="auth-forms" style="display: none">
+      <div class="container">
+        <div class="form-container" id="login-form">
+          <h2 class="form-title">Entrar na Plataforma</h2>
+          <form>
+            <div class="form-group">
+              <label for="login-email">E-mail</label>
+              <input
+                type="email"
+                id="login-email"
+                class="form-control"
+                placeholder="seu@email.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Senha</label>
+              <input
+                type="password"
+                id="login-password"
+                class="form-control"
+                placeholder="Sua senha"
+              />
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%">
+              Entrar
+            </button>
+          </form>
+          <p style="text-align: center; margin-top: 1rem">
+            Não tem uma conta? <a href="#" id="show-signup">Cadastre-se</a>
+          </p>
+        </div>
+
+        <div class="form-container" id="signup-form" style="display: none">
+          <h2 class="form-title">Criar Conta</h2>
+          <form>
+            <div class="form-group">
+              <label for="signup-name">Nome Completo</label>
+              <input
+                type="text"
+                id="signup-name"
+                class="form-control"
+                placeholder="Seu nome completo"
+              />
+            </div>
+            <div class="form-group">
+              <label for="signup-email">E-mail</label>
+              <input
+                type="email"
+                id="signup-email"
+                class="form-control"
+                placeholder="seu@email.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Senha</label>
+              <input
+                type="password"
+                id="signup-password"
+                class="form-control"
+                placeholder="Crie uma senha"
+              />
+            </div>
+            <div class="form-group">
+              <label for="user-type">Tipo de Usuário</label>
+              <select id="user-type" class="form-control">
+                <option value="student">Aluno</option>
+                <option value="professor">Professor</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" style="width: 100%">
+              Criar Conta
+            </button>
+          </form>
+          <p style="text-align: center; margin-top: 1rem">
+            Já tem uma conta? <a href="#" id="show-login">Entrar</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard do Aluno (será exibido após login) -->
+    <section id="dashboard" class="dashboard" style="display: none">
+      <div class="container">
+        <div class="dashboard-header">
+          <h2 class="welcome">
+            Bem-vindo, <span id="user-name">Carlos Silva</span>!
+          </h2>
+          <button class="btn btn-primary" id="add-activity">
+            <i class="fas fa-plus"></i> Nova Atividade
+          </button>
+        </div>
+
+        <div class="stats-cards">
+          <div class="stat-card">
+            <h3>Horas Concluídas</h3>
+            <div class="stat-number">128</div>
+            <div class="progress-bar">
+              <div class="progress" style="width: 64%"></div>
+            </div>
+            <p>128 de 200 horas necessárias</p>
+          </div>
+          <div class="stat-card">
+            <h3>Atividades Pendentes</h3>
+            <div class="stat-number">3</div>
+            <p>Aguardando validação</p>
+          </div>
+          <div class="stat-card">
+            <h3>Atividades Validadas</h3>
+            <div class="stat-number">15</div>
+            <p>Total de atividades aprovadas</p>
+          </div>
+        </div>
+
+        <h3 class="section-title">Suas Atividades</h3>
+        <div class="activities-list">
+          <div class="list-header">
+            <h3>Últimas Atividades</h3>
+            <div>
+              <i class="fas fa-filter"></i>
+              <i class="fas fa-sort"></i>
+            </div>
+          </div>
+          <div class="list-item">
+            <div>
+              <h4>Workshop de Python para Data Science</h4>
+              <p>20 horas - 15/08/2023</p>
+            </div>
+            <span class="badge badge-success">Validado</span>
+          </div>
+          <div class="list-item">
+            <div>
+              <h4>Palestra sobre IoT</h4>
+              <p>4 horas - 22/09/2023</p>
+            </div>
+            <span class="badge badge-warning">Pendente</span>
+          </div>
+          <div class="list-item">
+            <div>
+              <h4>Curso de Inglês Avançado</h4>
+              <p>60 horas - 01/06/2023 a 15/08/2023</p>
+            </div>
+            <span class="badge badge-success">Validado</span>
+          </div>
+          <div class="list-item">
+            <div>
+              <h4>Participação em SEMANA CIÊNTÍFICA</h4>
+              <p>40 horas - 10/10/2023 a 14/10/2023</p>
+            </div>
+            <span class="badge badge-warning">Pendente</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lista de Eventos -->
+    <section id="eventos" class="features">
+      <div class="container">
+        <h2 class="section-title">Eventos Disponíveis</h2>
+        <div class="events-list">
+          <div class="list-header">
+            <h3>Próximos Eventos</h3>
+          </div>
+          <div class="list-item">
+            <div>
+              <h4>Workshop de React Native</h4>
+              <p>20 horas - 25/11/2023 - Presencial</p>
+            </div>
+            <button class="btn btn-outline">Ver Detalhes</button>
+          </div>
+          <div class="list-item">
+            <div>
+              <h4>Palestra: Carreira em TI</h4>
+              <p>4 horas - 30/11/2023 - Remoto</p>
+            </div>
+            <button class="btn btn-outline">Ver Detalhes</button>
+          </div>
+          <div class="list-item">
+            <div>
+              <h4>Minicurso de Cloud Computing</h4>
+              <p>12 horas - 05/12/2023 - Híbrido</p>
+            </div>
+            <button class="btn btn-outline">Ver Detalhes</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toast Messages Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Sobre Nós</h3>
+            <p>
+              Sistema de gerenciamento de atividades complementares para alunos
+              da UTFPR, desenvolvido para simplificar e otimizar o processo de
+              registro e validação.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Contato</h3>
+            <p><i class="fas fa-envelope"></i> contato@atividadesutfpr.com</p>
+            <p><i class="fas fa-phone"></i> (41) 99999-9999</p>
+          </div>
+          <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <p><a href="#landing">Início</a></p>
+            <p><a href="#eventos">Eventos</a></p>
+            <p><a href="#professores">Professores</a></p>
+            <p><a href="#">Política de Privacidade</a></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2023 Atividades Complementares UTFPR. Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Elementos do DOM
+        const loginBtn = document.getElementById("login-btn");
+        const signupBtn = document.getElementById("signup-btn");
+        const authForms = document.getElementById("auth-forms");
+        const loginForm = document.getElementById("login-form");
+        const signupForm = document.getElementById("signup-form");
+        const showSignup = document.getElementById("show-signup");
+        const showLogin = document.getElementById("show-login");
+        const dashboard = document.getElementById("dashboard");
+        const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+        const navMenu = document.getElementById("nav-menu");
+        const toastContainer = document.getElementById("toast-container");
+
+        // Dados de demonstração
+        const demoAccounts = {
+          student: {
+            email: "aluno_demo@example.com",
+            password: "demo123",
+            name: "Carlos Silva",
+            type: "student",
+          },
+          professor: {
+            email: "professor_demo@example.com",
+            password: "demo123",
+            name: "Dr. Ana Santos",
+            type: "professor",
+          },
+        };
+
+        // Event Listeners
+        loginBtn.addEventListener("click", function () {
+          authForms.style.display = "block";
+          loginForm.style.display = "block";
+          signupForm.style.display = "none";
+          window.scrollTo({ top: authForms.offsetTop, behavior: "smooth" });
+        });
+
+        signupBtn.addEventListener("click", function () {
+          authForms.style.display = "block";
+          loginForm.style.display = "none";
+          signupForm.style.display = "block";
+          window.scrollTo({ top: authForms.offsetTop, behavior: "smooth" });
+        });
+
+        showSignup.addEventListener("click", function (e) {
+          e.preventDefault();
+          loginForm.style.display = "none";
+          signupForm.style.display = "block";
+        });
+
+        showLogin.addEventListener("click", function (e) {
+          e.preventDefault();
+          loginForm.style.display = "block";
+          signupForm.style.display = "none";
+        });
+
+        mobileMenuBtn.addEventListener("click", function () {
+          navMenu.classList.toggle("show");
+        });
+
+        // Simulação de login
+        document
+          .querySelectorAll("#login-form button, #signup-form button")
+          .forEach((button) => {
+            button.addEventListener("click", function () {
+              const email = this.closest("form").querySelector(
+                'input[type="email"]'
+              ).value;
+              const password = this.closest("form").querySelector(
+                'input[type="password"]'
+              ).value;
+
+              // Verificar se é uma conta de demonstração
+              if (
+                email === demoAccounts.student.email &&
+                password === demoAccounts.student.password
+              ) {
+                showToast("Login realizado com sucesso!", "success");
+                setTimeout(() => {
+                  authForms.style.display = "none";
+                  dashboard.style.display = "block";
+                  document.getElementById("user-name").textContent =
+                    demoAccounts.student.name;
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }, 1500);
+              } else if (
+                email === demoAccounts.professor.email &&
+                password === demoAccounts.professor.password
+              ) {
+                showToast("Login realizado com sucesso!", "success");
+                setTimeout(() => {
+                  authForms.style.display = "none";
+                  dashboard.style.display = "block";
+                  document.getElementById("user-name").textContent =
+                    demoAccounts.professor.name;
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }, 1500);
+              } else {
+                showToast(
+                  "E-mail ou senha incorretos. Use as credenciais de demo.",
+                  "error"
+                );
+              }
+            });
+          });
+
+        // Função para mostrar toast messages
+        function showToast(message, type) {
+          const toast = document.createElement("div");
+          toast.className = `toast ${type}`;
+          toast.innerHTML = `
+                    <i class="fas ${
+                      type === "success"
+                        ? "fa-check-circle"
+                        : "fa-exclamation-circle"
+                    }"></i>
+                    <span>${message}</span>
+                `;
+
+          toastContainer.appendChild(toast);
+
+          // Remover toast após 5 segundos
+          setTimeout(() => {
+            toast.remove();
+          }, 5000);
+        }
+
+        // Adicionar evento ao botão de nova atividade
+        document
+          .getElementById("add-activity")
+          .addEventListener("click", function () {
+            showToast(
+              "Funcionalidade de adicionar atividade será implementada em breve!",
+              "success"
+            );
+          });
+
+        // Adicionar eventos aos botões de detalhes dos eventos
+        document.querySelectorAll(".events-list .btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            showToast(
+              "É necessário fazer login para ver detalhes dos eventos.",
+              "error"
+            );
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
